@@ -7,6 +7,9 @@ const config = () => ({
     password: process.env.DATABASE_PASSWORD,
     database: process.env.DATABASE_NAME,
   },
+  jwt: {
+    secret: process.env.JWT_SECRET,
+  },
 });
 
 export default config;
