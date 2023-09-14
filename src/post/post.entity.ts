@@ -23,6 +23,7 @@ export class Post {
   userId: number;
 
   @ManyToOne(() => User, (user) => user.posts)
+  @Field(() => User)
   user: User;
 
   @Field()

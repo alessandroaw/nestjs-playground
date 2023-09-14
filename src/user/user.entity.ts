@@ -32,6 +32,7 @@ export class User {
   updatedAt: Date;
 
   @OneToMany(() => Post, (post) => post.user)
+  @Field(() => [Post])
   posts: Post[];
 
   toJSON() {

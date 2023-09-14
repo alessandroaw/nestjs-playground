@@ -21,6 +21,10 @@ export class PostService {
     return post;
   }
 
+  async findByUserId(userId: number): Promise<Post[]> {
+    return this.postRepository.find({ where: { userId } });
+  }
+
   async createRandomPost(userId: number): Promise<Post> {
     const post = new Post();
     post.title = 'Post ' + Math.random();
