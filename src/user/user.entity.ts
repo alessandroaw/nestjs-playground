@@ -1,8 +1,10 @@
 import { Field, ID, ObjectType } from '@nestjs/graphql';
+import { Post } from 'src/post/post.entity';
 import {
   Column,
   CreateDateColumn,
   Entity,
+  OneToMany,
   PrimaryGeneratedColumn,
   UpdateDateColumn,
 } from 'typeorm';
@@ -28,6 +30,9 @@ export class User {
   @Field()
   @UpdateDateColumn()
   updatedAt: Date;
+
+  @OneToMany(() => Post, (post) => post.user)
+  posts: Post[];
 
   toJSON() {
     // eslint-disable-next-line @typescript-eslint/no-unused-vars

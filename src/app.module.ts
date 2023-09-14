@@ -8,6 +8,7 @@ import config from './config/configuration';
 import { DatabaseModule } from './db/database.module';
 import { HelloModule } from './hello/hello.module';
 import { UserModule } from './user/user.module';
+import { PostModule } from './post/post.module';
 
 @Module({
   imports: [
@@ -25,6 +26,7 @@ import { UserModule } from './user/user.module';
     UserModule,
     BookmarkModule,
     HelloModule,
+    PostModule,
   ],
 })
 export class AppModule {}
